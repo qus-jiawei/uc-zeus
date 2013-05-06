@@ -13,12 +13,12 @@ public class GWTEnvironment {
 	
 	public static String getHomeTemplateId(){
 		//TODO 请在开发中心创建文件，然后将文件id纪录于此
-		return "-1";
+		return "4";
 	}
 	
 	public static String getNoticeTemplateId(){
 		//TODO 请在开发中心创建文件，然后将文件id纪录于此
-		return "-1";
+		return "5";
 	}
 	
 	

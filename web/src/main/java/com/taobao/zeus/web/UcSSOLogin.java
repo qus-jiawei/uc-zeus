@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
+import com.taobao.zeus.schedule.mvc.DebugInfoLog;
 import com.taobao.zeus.schedule.mvc.ScheduleInfoLog;
 import com.taobao.zeus.store.mysql.persistence.ZeusUser;
 
@@ -36,7 +37,7 @@ public class UcSSOLogin implements LoginFilter.SSOLogin {
 	@Override
 	public String getUid(HttpServletRequest req) {
 		String uid = req.getParameter("uid");
-		ScheduleInfoLog.info(uid);
+		DebugInfoLog.info(uid);
 		if( uid!=null ){
 			ZeusUser zu = getByUid(uid);
 			if( zu==null ) return null;

@@ -43,7 +43,7 @@
 
 <property>
   <name>javax.jdo.option.ConnectionURL</name>
-  <value>jdbc:mysql://localhost/hive?characterEncoding=UTF-8</value>
+  <value>jdbc:mysql://platform33/hive?characterEncoding=UTF-8</value>
   <description>JDBC connect string for a JDBC metastore</description>
 </property>
 
@@ -74,13 +74,13 @@
 
 <property>
   <name>javax.jdo.option.ConnectionUserName</name>
-  <value>zeus</value>
+  <value>qiujw</value>
   <description>username to use against metastore database</description>
 </property>
 
 <property>
   <name>javax.jdo.option.ConnectionPassword</name>
-  <value>zeus</value>
+  <value>ucbigdata</value>
   <description>password to use against metastore database</description>
 </property>
 

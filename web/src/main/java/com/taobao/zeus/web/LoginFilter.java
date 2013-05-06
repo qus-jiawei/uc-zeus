@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.context.ApplicationContext;
 import org.springframework.web.context.support.WebApplicationContextUtils;
 
+import com.taobao.zeus.schedule.mvc.ScheduleInfoLog;
 import com.taobao.zeus.store.UserManager;
 import com.taobao.zeus.store.mysql.persistence.ZeusUser;
 /**
@@ -96,7 +97,8 @@ public class LoginFilter implements Filter {
 		ApplicationContext applicationContext=WebApplicationContextUtils.getWebApplicationContext(filterConfig.getServletContext());
 		userManager=(UserManager) applicationContext.getBean("userManager");
 		if(applicationContext.containsBean("ssoLogin")){
-			login=(SSOLogin)applicationContext.getBean("ssologin");
+			ScheduleInfoLog.info("use sslogin bean");
+			login=(SSOLogin)applicationContext.getBean("ssoLogin");
 		}
 	}
 

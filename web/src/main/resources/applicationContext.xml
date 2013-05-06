@@ -67,4 +67,9 @@
 	
 	<bean id="distributeLocker" class="com.taobao.zeus.schedule.DistributeLocker" init-method="init" />
 	
+	
+	<!-- ooslogin -->
+	<bean id="ssologin" class="com.taobao.zeus.web.UcSSOLogin" />
+	
+	
 </beans>

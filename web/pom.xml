@@ -17,7 +17,7 @@
 		<java.encoding>UTF-8</java.encoding>
 		<jetty-version>6.1.22</jetty-version>
 		<gwt-version>2.5.0</gwt-version>
-		<local.highcharts>/Users/zhoufang/Documents/dev/zeus-opensource/web/libs/highcharts-1.4.0.jar</local.highcharts>
+		<local.highcharts>/home/qiujw/zeus/uc-zeus/uc-zeus/web/libs/highcharts-1.4.0.jar</local.highcharts>
 	</properties>
 
 	<name>Zeus Web服务</name>

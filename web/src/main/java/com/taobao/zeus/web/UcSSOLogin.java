@@ -37,7 +37,11 @@ public class UcSSOLogin implements LoginFilter.SSOLogin {
 //		else{
 //			return req.getParameter("uid");
 //		}
-		return req.getParameter("uid");
+		String uid = req.getParameter("uid");
+		if( uid == null){
+			uid = (String) req.getSession().getAttribute("user");
+		}
+		return uid;
 	}
 
 	@Override
@@ -47,7 +51,8 @@ public class UcSSOLogin implements LoginFilter.SSOLogin {
 //		else{
 //			return req.getParameter("uid")+"@ucweb.com";
 //		}
-		return req.getParameter("uid")+"@ucweb.com";
+		return getUid(req)+"@ucweb.com";
+//		return req.getParameter("uid")+"@ucweb.com";
 	}
 
 	@Override
@@ -57,7 +62,7 @@ public class UcSSOLogin implements LoginFilter.SSOLogin {
 //		else{
 //			return req.getParameter("uid")+"名字";
 //		}
-		return "名字-"+req.getParameter("uid");
+		return  "名字-"+getUid(req);
 	}
 
 	@Override

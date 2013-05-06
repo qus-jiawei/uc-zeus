@@ -32,29 +32,32 @@ public class UcSSOLogin implements LoginFilter.SSOLogin {
 	
 	@Override
 	public String getUid(HttpServletRequest req) {
-		String uid = (String) req.getSession().getAttribute("user");
-		if(uid!=null) return uid;
-		else{
-			return req.getParameter("uid");
-		}
+//		String uid = (String) req.getSession().getAttribute("user");
+//		if(uid!=null) return uid;
+//		else{
+//			return req.getParameter("uid");
+//		}
+		return req.getParameter("uid");
 	}
 
 	@Override
 	public String getEmail(HttpServletRequest req) {
-		String uid = (String) req.getSession().getAttribute("user");
-		if(uid!=null) return uid+"@ucweb.com";
-		else{
-			return req.getParameter("uid")+"@ucweb.com";
-		}
+//		String uid = (String) req.getSession().getAttribute("user");
+//		if(uid!=null) return uid+"@ucweb.com";
+//		else{
+//			return req.getParameter("uid")+"@ucweb.com";
+//		}
+		return req.getParameter("uid")+"@ucweb.com";
 	}
 
 	@Override
 	public String getName(HttpServletRequest req) {
-		String uid = (String) req.getSession().getAttribute("user");
-		if(uid!=null) return uid+"名字啊啊啊";
-		else{
-			return req.getParameter("uid")+"名字啊啊啊";
-		}
+//		String uid = (String) req.getSession().getAttribute("user");
+//		if(uid!=null) return uid+"名字啊啊啊";
+//		else{
+//			return req.getParameter("uid")+"名字";
+//		}
+		return "名字-"+req.getParameter("uid");
 	}
 
 	@Override

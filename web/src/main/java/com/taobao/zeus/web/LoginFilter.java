@@ -100,7 +100,7 @@ public class LoginFilter implements Filter {
 		userManager=(UserManager) applicationContext.getBean("userManager");
 		if(applicationContext.containsBean("ssoLogin")){
 			DebugInfoLog.info("use sslogin bean");
-//			login=(SSOLogin)applicationContext.getBean("ssoLogin");
+			login=(SSOLogin)applicationContext.getBean("ssoLogin");
 		}
 	}
 

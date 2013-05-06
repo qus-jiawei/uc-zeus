@@ -42,7 +42,7 @@ public class UcSSOLogin implements LoginFilter.SSOLogin {
 		DebugInfoLog.info(uid);
 		if( uid!=null ){
 			ZeusUser zu = getByUid(uid);
-			DebugInfoLog.info(zu.toString());
+			DebugInfoLog.info("after find:"+zu.toString());
 			if( zu==null ) return null;
 			else return zu.getUid();
 		}

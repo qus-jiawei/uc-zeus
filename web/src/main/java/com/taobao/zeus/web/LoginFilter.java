@@ -68,6 +68,7 @@ public class LoginFilter implements Filter {
 		
 		ZeusUser zeusUser=null;
 		String uri=httpRequest.getRequestURI();
+		DebugInfoLog.info("uri:"+uri);
 		if(uri.endsWith(".taobao") || uri.endsWith(".js") || uri.endsWith(".css") || uri.endsWith(".gif") ||
 				uri.endsWith(".jpg") || uri.endsWith(".png") || uri.endsWith("dump.do")){
 			chain.doFilter(request, response);
@@ -83,6 +84,7 @@ public class LoginFilter implements Filter {
 		zeusUser.setUid(login.getUid(httpRequest));
 		zeusUser.setName(login.getName(httpRequest));
 		zeusUser.setPhone(login.getPhone(httpRequest));
+		DebugInfoLog.info("after all:"+zeusUser);
 		if(!uid.equals(httpRequest.getSession().getAttribute("user"))){
 			userManager.addOrUpdateUser(zeusUser);
 			httpRequest.getSession().setAttribute("user", zeusUser.getUid());

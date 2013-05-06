@@ -88,6 +88,7 @@ public class ZeusUser{
 	}
 	@Override
 	public String toString() {
-		return "ZeusUser [uid=" + uid + ", wangwang=" + wangwang + "]";
+		return "ZeusUser [uid=" + uid + ", name=" + name + 
+				", phone=" + phone +", email=" + email +"]";
 	}
 }

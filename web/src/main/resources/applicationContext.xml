@@ -69,7 +69,7 @@
 	
 	
 	<!-- ooslogin -->
-	<bean id="ssologin" class="com.taobao.zeus.web.UcSSOLogin" />
+	<bean id="ssoLogin" class="com.taobao.zeus.web.UcSSOLogin" />
 	
 	
 </beans>

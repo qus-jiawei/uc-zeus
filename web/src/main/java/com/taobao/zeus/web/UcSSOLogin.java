@@ -25,7 +25,7 @@ public class UcSSOLogin implements LoginFilter.SSOLogin {
 			zu.setName(temp[i][1]);
 			zu.setPhone(temp[i][2]);
 			zu.setUid(temp[i][3]);
-			zuList.add(new ZeusUser());
+			zuList.add(zu);
 		}
 	}
 	private ZeusUser getByUid(String uid){

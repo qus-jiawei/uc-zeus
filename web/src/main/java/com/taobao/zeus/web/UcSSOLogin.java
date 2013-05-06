@@ -6,7 +6,6 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 
 import com.taobao.zeus.schedule.mvc.DebugInfoLog;
-import com.taobao.zeus.schedule.mvc.ScheduleInfoLog;
 import com.taobao.zeus.store.mysql.persistence.ZeusUser;
 
 public class UcSSOLogin implements LoginFilter.SSOLogin {

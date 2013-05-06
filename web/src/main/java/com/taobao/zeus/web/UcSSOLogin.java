@@ -26,6 +26,8 @@ public class UcSSOLogin implements LoginFilter.SSOLogin {
 			zu.setPhone(temp[i][2]);
 			zu.setUid(temp[i][3]);
 			zuList.add(zu);
+			DebugInfoLog.info(zu.toString());
+			DebugInfoLog.info(zuList.toString());
 		}
 	}
 	private ZeusUser getByUid(String uid){
@@ -40,6 +42,7 @@ public class UcSSOLogin implements LoginFilter.SSOLogin {
 		DebugInfoLog.info(uid);
 		if( uid!=null ){
 			ZeusUser zu = getByUid(uid);
+			DebugInfoLog.info(zu.toString());
 			if( zu==null ) return null;
 			else return zu.getUid();
 		}

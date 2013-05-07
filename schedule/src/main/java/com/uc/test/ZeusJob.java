@@ -1,16 +1,18 @@
 package com.uc.test;
 
 import org.apache.hadoop.conf.Configuration;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import com.taobao.zeus.schedule.mvc.ScheduleInfoLog;
 
 public class ZeusJob {
-	private static Logger log = Logger.getLogger(ZeusJob.class);
+	private static Logger log=LoggerFactory.getLogger(ScheduleInfoLog.class);
 	public static void main(String[] args){
 		
 		try {
-			log.info("i sleep");
 			Thread.sleep(1000);
-			log.info("i sleep again");
+			log.info("sleep");
 			Thread.sleep(1000);
 			Configuration conf=new Configuration(false);
 			String temp = conf.get("a");
@@ -20,9 +22,8 @@ public class ZeusJob {
 			Thread.sleep(time*1000);
 			
 		} catch (InterruptedException e) {
-			log.error("sleep is intxxxx",e);
+			log.info("catch exception",e);
 		}
-		log.info("i die");
 		
 	}
 }

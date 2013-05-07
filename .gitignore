@@ -1,6 +1,10 @@
+/web/target/
+/client/target/
+/schedule/target/
 *.class
 
 # Package Files #
 *.war
 *.ear
-.*
+*.jar
+

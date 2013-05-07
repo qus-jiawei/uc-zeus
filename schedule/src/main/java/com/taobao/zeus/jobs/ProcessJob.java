@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.taobao.zeus.jobs.sub.tool.CancelHadoopJob;
+import com.taobao.zeus.schedule.mvc.DebugInfoLog;
 import com.taobao.zeus.store.HierarchyProperties;
 /**
  * 通过操作系统创建进程Process的Job任务
@@ -47,6 +48,8 @@ public abstract class ProcessJob extends AbstractJob implements Job {
 		envMap.put("HIVE_CONF_DIR", ".:"+System.getenv("HIVE_CONF_DIR"));
 		
 		List<String> commands=getCommandList();
+		//QJW add to print all command
+		DebugInfoLog.info("running command:"+commands);
 		for(String s:commands){
 			log("DEBUG Command:"+s);
 			

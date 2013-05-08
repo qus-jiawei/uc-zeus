@@ -1,69 +1,408 @@
 <?xml version="1.0"?>
 <?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
 <!-- Put site-specific property overrides in this file. -->
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
 <configuration>
-<!-- 
-<property>
-  <name>dfs.umask</name>
-  <value>002</value>
-</property>
+
+  <property>
+    <name>hadoop.tmp.dir</name>
+    <value>${user.home}/hadoop_temp</value>
+  </property>
+
+  <property>
+    <name>fs.defaultFS</name>
+    <value>hdfs://mycluster</value>
+  </property>
+
+  <property>
+    <name>ha.zookeeper.quorum</name>
+    <value>platform34:34181,platform30:34181,platform31:34181,platform32:34181,platform33:34181</value>
+  </property>
+
+  <property>
+    <name>fs.trash.interval</name>
+    <value>1440</value>
+  </property>
+
+  <property>
+    <name>fs.trash.checkpoint.interval</name>
+    <value>60</value>
+  </property>
+  
+  <property>
+    <name>hadoop.security.authentication</name>
+    <value>simple</value>
+  </property>
+
+  <property>
+    <name>hadoop.security.authorization</name>
+    <value>false</value>
+  </property>
+
+  <property>
+    <name>hadoop.http.staticuser.user</name>
+    <value>hadoop</value>
+  </property>
+  
+  <property>
+    <name>io.compression.codecs</name>
+    <value>org.apache.hadoop.io.compress.GzipCodec,org.apache.hadoop.io.compress.SnappyCodec</value>
+  </property>
+
+  <property>
+    <name>mapreduce.framework.name</name>
+    <value>yarn</value>
+  </property>
+
+  <property>
+    <name>mapreduce.jobhistory.address</name>
+    <value>platform34:34120</value>
+  </property>
+
+  <property>
+    <name>mapreduce.jobhistory.webapp.address</name>
+    <value>platform34:34888</value>
+  </property>
+ 
+  <property>
+    <name>mapreduce.jobhistory.intermediate-done-dir</name>
+    <value>${user.home}/yarn_nm/jobhistory/intermediate-done-dir</value>
+  </property>
+ 
+  <property>
+    <name>mapreduce.jobhistory.done-dir</name>
+    <value>${user.home}/yarn_nm/jobhistory/done</value>
+  </property>
+
+  <property>
+    <name>mapred.child.java.opts</name>
+    <value>-Xmx400m</value>
+  </property>
+
+  <property>
+    <name>mapreduce.shuffle.port</name>
+    <value>34880</value>
+  </property>
+
+  <property>
+    <name>mapreduce.client.submit.file.replication</name>
+    <value>2</value>
+  </property>
+
+  <property>
+    <name>mapreduce.map.speculative</name>
+    <value>false</value>
+  </property>
+  
+  <property>
+    <name>mapreduce.reduce.speculative</name>
+    <value>false</value>
+  </property>
 
     <property>
-        <name>hadoop.job.ugi</name>
-        <value>zeus,group,#password</value>
-    </property>
-    <property>
-        <name>mapred.job.queue.name</name>
-        <value>cug-zeus</value>
-    </property>
-    <property>
-        <name>fs.default.name</name>
-        <value>hdfs://hdpnn:9000</value>
-    </property>
-    <property>
-        <name>mapred.job.tracker</name>
-        <value>hdpjt:9001</value>
+        <name>yarn.app.mapreduce.am.staging-dir</name>
+        <value>/user</value>
     </property>
 
     <property>
-      <name>dfs.block.size</name>
-      <value>268435456</value>
-      <description>The default block size for new files.</description>
-    </property>
-    <property>
-        <name>mapred.child.java.opts</name>
-        <value>-Xmx2048m</value>
-        <description></description>
+        <name>yarn.resourcemanager.address</name>
+        <value>platform34:34040</value>
     </property>
 
     <property>
-      <name>io.sort.record.percent</name>
-      <value>0.1</value>
-      <description></description>
-    </property>
-    <property>
-      <name>io.sort.factor</name>
-      <value>100</value>
-      <description></description>
-    </property>
-
-
-    <property>
-        <name>mapred.map.output.compression.codec</name>
-     <value>org.apache.hadoop.io.compress.LzoCodec</value>
+        <name>yarn.resourcemanager.scheduler.address</name>
+        <value>platform34:34030</value>
     </property>
 
     <property>
-       <name>mapred.output.compression.type</name>
-       <value>BLOCK</value>
-       <description>If the job outputs are to compressed as SequenceFiles, how should
-               they be compressed? Should be one of NONE, RECORD or BLOCK.
-       </description>
+        <name>yarn.resourcemanager.webapp.address</name>
+        <value>platform34:34088</value>
     </property>
 
     <property>
-      <name>mapred.compress.map.output</name>
-      <value>true</value>
+        <name>yarn.resourcemanager.resource-tracker.address</name>
+        <value>platform34:34025</value>
     </property>
- -->
+
+    <property>
+        <name>yarn.resourcemanager.admin.address</name>
+        <value>platform34:34141</value>
+    </property>
+
+    <property>
+        <name>yarn.nodemanager.aux-services</name>
+        <value>mapreduce.shuffle</value>
+    </property> 
+
+    <property>
+        <name>yarn.log-aggregation-enable</name>
+        <value>true</value>
+    </property> 
+
+    <property>
+        <name>yarn.nodemanager.local-dirs</name>
+        <value>${user.home}/yarn_nm/local-dir</value>
+    </property>
+
+    <property>
+        <name>yarn.nodemanager.log-dirs</name>
+        <value>${user.home}/yarn_nm/log-dir</value>
+    </property>
+
+    <property>
+        <description>hdfs path</description>
+        <name>yarn.nodemanager.remote-app-log-dir</name>
+        <value>/var/log/hadoop-yarn</value>
+    </property>
+
+    <property>
+        <name>yarn.nodemanager.localizer.address</name>
+        <value>0.0.0.0:34840</value>
+    </property>
+
+    <property>
+        <name>yarn.nodemanager.address</name>
+        <value>0.0.0.0:34841</value>
+    </property>
+
+    <property>
+        <name>yarn.nodemanager.webapp.address</name>
+        <value>0.0.0.0:34842</value>
+    </property>
+
+    <!-- mem scheduler -->
+    <property>
+        <name>yarn.nodemanager.vmem-pmem-ratio</name>
+        <value>4.1</value>
+    </property>
+
+    <property>
+        <name>yarn.resourcemanager.scheduler.class</name>
+        <!-- <value>org.apache.hadoop.yarn.server.resourcemanager.scheduler.fifo.FifoScheduler</value> -->
+        <value>org.apache.hadoop.yarn.server.resourcemanager.scheduler.capacity.CapacityScheduler</value>
+    </property>
+
+    <property>
+        <name>yarn.scheduler.minimum-allocation-mb</name>
+        <value>128</value>
+    </property>
+
+    <property>
+        <name>yarn.scheduler.maximum-allocation-mb</name>
+        <value>1024</value>
+    </property>
+
+    <property>
+        <name>yarn.app.mapreduce.am.resource.mb</name>
+        <value>1024</value>
+    </property>
+
+    <property>
+        <name>yarn.resourcemanager.nodes.include-path</name>
+        <value>yarn.include</value>
+    </property>
+    
+    <property>
+        <name>yarn.resourcemanager.nodes.exclude-path</name>
+        <value>yarn.exclude</value>
+    </property>
+  
+  <property>
+    <name>dfs.nameservices</name>
+    <value>mycluster</value>
+  </property>
+
+  <property>
+    <name>dfs.ha.namenodes.mycluster</name>
+    <value>nn1,nn2</value>
+  </property>
+
+  <property>
+    <name>dfs.namenode.rpc-address.mycluster.nn1</name>
+    <value>platform34:34900</value>
+  </property>
+
+  <property>
+    <name>dfs.namenode.rpc-address.mycluster.nn2</name>
+    <value>platform33:34900</value>
+  </property>
+  
+  <property>
+    <name>dfs.namenode.http-address.mycluster.nn1</name>
+    <value>platform34:34070</value>
+  </property>
+
+  <property>
+    <name>dfs.namenode.http-address.mycluster.nn2</name>
+    <value>platform33:34070</value>
+  </property>
+  
+  <property>
+    <name>dfs.namenode.https-address.mycluster.nn1</name>
+    <value>platform34:34470</value>
+  </property>
+  
+  <property>
+    <name>dfs.namenode.https-address.mycluster.nn2</name>
+    <value>platform33:34470</value>
+  </property>
+  
+  <property>
+    <name>dfs.datanode.address</name>
+    <value>0.0.0.0:34010</value>
+  </property>
+
+  <property>
+    <name>dfs.datanode.ipc.address</name>
+    <value>0.0.0.0:34020</value>
+  </property>
+
+  <property>
+    <name>dfs.datanode.http.address</name>
+    <value>0.0.0.0:34075</value>
+  </property>
+
+  <property>
+    <name>dfs.namenode.secondary.http-address</name>
+    <value>0.0.0.0:34090</value>
+  </property>
+  
+  <property>
+    <name>dfs.namenode.shared.edits.dir</name>
+    <value>qjournal://platform34:34485;platform30:34485;platform31:34485;platform32:34485;platform33:34485/mycluster</value>
+  </property>
+ 
+  <!-- journal , QJM -->
+  <property>
+    <name>dfs.namenode.edits.journal-plugin.qjournal</name>
+    <value>org.apache.hadoop.hdfs.qjournal.client.QuorumJournalManager</value>
+  </property>
+  
+  <property>
+    <name>dfs.journalnode.edits.dir</name>
+    <value>${user.home}/hadoop_journal/edits</value>
+  </property>
+
+  <property>
+    <name>dfs.journalnode.rpc-address</name>
+    <value>0.0.0.0:34485</value>
+  </property>
+
+  <property>
+    <name>dfs.journalnode.http-address</name>
+    <value>0.0.0.0:34480</value>
+  </property>
+
+  <property>
+    <name>dfs.client.failover.proxy.provider.mycluster</name>
+    <value>org.apache.hadoop.hdfs.server.namenode.ha.ConfiguredFailoverProxyProvider</value>
+  </property>
+
+  <property>
+    <name>dfs.ha.fencing.methods</name>
+    <value>sshfence(qiujw:9922)</value>
+  </property>
+
+  <property>
+    <name>dfs.ha.fencing.ssh.private-key-files</name>
+    <value>/home/qiujw/.ssh/id_rsa</value>
+  </property>
+
+  <property>
+    <name>dfs.ha.automatic-failover.enabled</name>
+    <value>true</value>
+  </property>
+
+  <property>
+    <name>dfs.namenode.name.dir</name>
+    <value>file:///home/qiujw/hadoop_name</value>
+    <final>true</final>
+  </property>
+
+  <property>
+    <name>dfs.replication</name>
+    <value>2</value>
+  </property>
+
+  <property>
+    <name>dfs.namenode.safemode.threshold-pct</name>
+    <value>1.0f</value>
+  </property>
+  
+  <property>
+    <name>dfs.umaskmode</name>
+    <value>077</value>
+  </property>
+  
+  <property>
+    <name>dfs.block.size</name>
+    <value>134217728</value>
+  </property>
+  
+  <property>
+    <name>dfs.block.access.token.enable</name>
+    <value>false</value>
+  </property>
+
+  <property>
+    <name>dfs.datanode.data.dir.perm</name>
+    <value>700</value>
+  </property>
+
+  <property>
+    <name>dfs.cluster.administrators</name>
+    <value>qiujw</value>
+  </property>
+
+  <property>
+    <name>dfs.permissions.superusergroup</name>
+    <value>qiujw</value>
+  </property>
+
+  <property>
+    <name>dfs.hosts</name>
+    <value>/home/qiujw/hadoop/etc/hadoop/dfs.include</value>
+  </property>
+
+  <property>
+    <name>dfs.hosts.exclude</name>
+    <value>/home/qiujw/hadoop/etc/hadoop/dfs.exclude</value>
+  </property>
+  
+  <property>
+    <name>dfs.webhdfs.enabled</name>
+    <value>true</value>
+  </property>
+
+  <property>
+    <name>dfs.support.append</name>
+    <value>true</value>
+  </property>
+  
+  <property>
+    <name>dfs.datanode.max.xcievers</name>
+    <value>4096</value>
+  </property>
+
+  <property>
+    <name>dfs.balance.bandwidthPerSec</name>
+    <value>20971520</value>
+  </property>
+
+  <property>
+    <name>dfs.ha.zkfc.port</name>
+    <value>34819</value>
+  </property>
+
+  <property>
+    <name>dfs.namenode.num.extra.edits.retained</name>
+    <value>2200</value>
+  </property>
+ 
+  <property>
+    <name>dfs.datanode.du.reserved</name>
+    <value>1024000000</value>
+  </property>
+
 </configuration>

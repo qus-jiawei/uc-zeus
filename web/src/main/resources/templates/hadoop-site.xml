@@ -2,7 +2,7 @@
 <?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
 <!-- Put site-specific property overrides in this file. -->
 <configuration>
-
+<!-- 
 <property>
   <name>dfs.umask</name>
   <value>002</value>
@@ -65,5 +65,5 @@
       <name>mapred.compress.map.output</name>
       <value>true</value>
     </property>
-
+ -->
 </configuration>

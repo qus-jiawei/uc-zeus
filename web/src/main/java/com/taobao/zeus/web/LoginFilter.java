@@ -85,6 +85,7 @@ public class LoginFilter implements Filter {
 		zeusUser.setName(login.getName(httpRequest));
 		zeusUser.setPhone(login.getPhone(httpRequest));
 		DebugInfoLog.info("after all:"+zeusUser);
+		DebugInfoLog.info("after all:"+zeusUser);
 		if(!uid.equals(httpRequest.getSession().getAttribute("user"))){
 			userManager.addOrUpdateUser(zeusUser);
 			httpRequest.getSession().setAttribute("user", zeusUser.getUid());
